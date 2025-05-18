@@ -1,0 +1,19 @@
+; multiplication of 8 bit numbers 
+
+MVI D, 00H
+LDA 5000H
+MOV B,A 
+LDA 5001H
+MOV C,A
+MVI A,00H
+LOOP:
+ADD B
+JNC NEXT
+INR D
+NEXT:
+DCR C
+JNZ LOOP
+STA 5003H
+MOV A,D
+STA 5002H
+HLT
