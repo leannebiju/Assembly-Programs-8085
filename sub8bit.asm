@@ -1,0 +1,16 @@
+; subtraction of 8 bit numbers 
+
+MVI C, 00H
+LDA 5000H
+MOV B, A 
+LDA 5001H
+SUB B
+JNC NOCARRY
+INR C
+CMA
+ADI 01H
+NOCARRY:
+STA 5002H
+MOV A, C
+STA 5003H
+HLT
