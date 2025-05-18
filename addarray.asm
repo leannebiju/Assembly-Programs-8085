@@ -1,0 +1,18 @@
+; program to add array of numbers 
+
+LXI H,5000H
+MOV C,M
+MVI A,00H
+MVI B,00H
+SKIP:
+INX H
+ADD M
+JNC LOOP
+INR B
+LOOP:
+DCR C
+JNZ SKIP
+STA 5010H
+MOV A,B
+STA 5011H
+HLT
