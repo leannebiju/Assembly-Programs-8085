@@ -1,0 +1,14 @@
+; addition of 8 bit numbers 
+
+MVI C, 00
+LDA 5000H
+MOV B,A 
+LDA 5001H
+ADD B
+JNC NOCARRY
+INR C
+NOCARRY:
+STA 5002H
+MOV A,C
+STA 5003H
+HLT
